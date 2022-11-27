@@ -1,12 +1,6 @@
 .image-title {
-    width: 50vw;
+    width: 20vw;
     display: inline-block;
     text-align: left;
-    font-size: 1.75rem;
-}
-html {
-    font-size: 20px
-}
-a {
-  font-size: 5px  
+    font-size: 1.75em
 }
