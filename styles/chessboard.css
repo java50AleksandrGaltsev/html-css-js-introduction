@@ -1,0 +1,30 @@
+.board-class {
+display: flex;
+flex-direction: column;
+border: solid 2px black;
+}
+.boardrow-class {
+    display: flex;
+    flex-direction: row;
+    width: 40vw;
+}
+.cellblack-class {
+    width: 5vw;
+    height: 5vw;
+    background-color: black;
+}
+.cellwhite-class {
+    width: 5vw;
+    height: 5vw;
+    background-color: white;
+}
+body {
+   display: flex; 
+   justify-content: center;
+   align-items: center;
+   height: 100%;
+   
+}
+html {
+   height: 100%; 
+}
