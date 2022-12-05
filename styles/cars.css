@@ -1,3 +1,13 @@
+@font-face {
+    font-family: airstream;
+    src: url(fonts/Airstream-webfont.svg);
+    src:url(fonts/Airstream-webfont.woff);
+}
+@font-face {
+    font-family: lakeshor;
+    src: url(fonts/LAKESHOR-webfont.svg);
+    src:url(fonts/LAKESHOR-webfont.woff);
+}
 html {
     height: 100%;
 }
@@ -14,19 +24,28 @@ body {
    background-color:dimgray;
    font-size: 2em; 
    text-transform: uppercase;
+   font-family: airstream;
+}
+h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .main-class {
    display: flex;
    flex-direction: column; 
+   justify-content: center;
+   flex-grow: 1;
 }
 .details-conteiner {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 2vh;
 }
 .details-image {
-    width: 80vw;
-    height: 60vw;
+    width: 60vw;
+    height: 50vw;
+    border-radius: 25%;
 }
 .details-title {
     display: block;
@@ -37,30 +56,78 @@ body {
 .thumbnails-list {
 display: flex;
 flex-wrap: wrap;
-max-height: 60vh;
+max-height: 37vh;
 overflow-y: scroll;
 list-style: none;
 justify-content: space-around;
 padding-left: 0;
+margin-top: 3vh;
 }
 .thumbnails-item {
     
     border: solid 2px black;
     margin-top: 2vh;
-    border-radius: 35%;
+    border-radius: 25%;
     overflow: hidden;
    
 }
 .thumbnails-anchor {
-    
+    text-decoration: none;
 }
 .thumbnails-image {
     display: block;
-    width: 40vw;
-    height: 30vw;
+    width: 25vw;
+    height: 15vw;
 }
 .thumbnails-title {
     display: block;
     text-align: center;
     background-color: darkgray;
+    color: black;
+}
+@media (min-width: 560px) {
+    .main-class {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .thumbnails-list {
+        order: -1;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        max-height: 77vh;
+        justify-content: flex-start;
+    }
+    .thumbnails-item {
+        min-height: 35vh;
+    }
+    .thumbnails-title {
+        height: 3vh;
+    }
+    .thumbnails-image {
+        width: 35vh;
+        height: 30vh;
+    }
+    .details-image {
+        width: 90vh;
+        height: 70vh;
+        border-radius: 25%;
+        margin-top: 10px;
+    }
+    
+    h2 {
+        font-size: 1em;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+@media (min-width: 1000px) {
+    h2 {
+        font-size: 1.5em;
+    }
+    .details-image {
+        width: 95vh;
+        height: 75vh;
+    
+    }
+    
 }
