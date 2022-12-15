@@ -12,11 +12,11 @@ html {
     height: 100%;
 }
 body {
-    --thumbnails-image-width: 25vh;
-    --thumbnails-image-height: 15vh;
+    --thumbnails-image-width: 25vw;
+    --thumbnails-image-height: 10vh;
     --thumbnails-title-height: calc(var(--thumbnails-image-height) * 0.33);
-    --details-image-width: 60vw;
-    --details-image-height: 50vh;
+    --details-image-width: 80vw;
+    --details-image-height: 40vh;
 }
 body {
     height: 100%;
@@ -43,12 +43,19 @@ h2 {
    justify-content: center;
    flex-grow: 1;
 }
+.main-class.hidden {
+   
+   justify-content: space-around;
+}
 .details-conteiner {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 2vh;
     
+}
+.hidden .details-conteiner {
+    display: none;
 }
 .details-frame {
     position: relative;
@@ -62,10 +69,15 @@ h2 {
     display: block;
     background-color:gainsboro;
     text-transform: uppercase;
-    font-size: 1.8em;
+    font-size: 1.4em;
     position: absolute;
-    bottom: 25vh;
-    left: 50vw;
+    bottom: 49vh;
+    left: 8vw;
+}
+#hide-button {
+    position: absolute;
+    right: -40vw;
+    top: 3vh;
 }
 .thumbnails-list {
 display: flex;
@@ -78,6 +90,9 @@ padding-left: 0;
 margin-top: 3vh;
 padding-right: 2vw;
 }
+.hidden .thumbnails-list {
+    max-height: 67vh;
+}
 .thumbnails-item {
     
     border: solid 2px black;
@@ -87,6 +102,7 @@ padding-right: 2vw;
     min-height: calc(var(--thumbnails-image-height) + var(--thumbnails-title-height));
     min-width: var(--thumbnails-image-width);
     max-width: var(--thumbnails-image-width);
+    
    
 }
 .thumbnails-item:hover {
@@ -120,7 +136,16 @@ padding-right: 2vw;
         flex-direction: row;
         justify-content: space-around;
     }
-    
+    .details-title {
+        font-size: 1.8em;
+        bottom: 20vh;
+        left: 45vw;
+    }
+    #hide-button {
+        position: absolute;
+        right: -25vw;
+        top: 5vh;
+    }
     .thumbnails-list {
         order: -1;
         flex-direction: column;
@@ -129,8 +154,14 @@ padding-right: 2vw;
         justify-content: flex-start;
         padding-right: 2vw;
     }
+    .hidden .thumbnails-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        max-height: 75vh;
+    }
     
-   
+    
     .details-image {
 
         margin-top: 10px;
