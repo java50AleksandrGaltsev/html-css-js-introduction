@@ -51,6 +51,7 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
     margin-bottom: 2vh;
     transition: 5s cubic-bezier(0.8, 2, 0.2, 1);
     
@@ -62,8 +63,8 @@ h2 {
     position: relative;
 }
 .details-image {
-    w idth: var(--details-image-width);
-    height: var(--details-image-height);
+    width: var(--details-image-width);
+    /* height: var(--details-image-height); */
     border-radius: 25%;
 }
 .details-title {
@@ -72,12 +73,17 @@ h2 {
     text-transform: uppercase;
     font-size: 1.4em;
     position: absolute;
-    bottom: 49vh;
+    bottom: 55vh;
     left: 8vw;
 }
 #hide-button {
     position: absolute;
     right: -40vw;
+    top: 3vh;
+}
+#audio {
+    position: absolute;
+    right: -40 vw;
     top: 3vh;
 }
 .thumbnails-list {
@@ -93,6 +99,7 @@ padding-right: 2vw;
 }
 .hidden .thumbnails-list {
     max-height: 67vh;
+    
 }
 .thumbnails-item {
     
@@ -103,12 +110,14 @@ padding-right: 2vw;
     min-height: calc(var(--thumbnails-image-height) + var(--thumbnails-title-height));
     min-width: var(--thumbnails-image-width);
     max-width: var(--thumbnails-image-width);
-    
+   
    
 }
 .thumbnails-item:hover {
     transform: scale(1.1);
-    margin-left: 1vw;
+    margin-left: 1.3vw;
+    margin-right: 1.3vw;
+   
 }
 .thumbnails-anchor {
     text-decoration: none;
@@ -134,21 +143,24 @@ padding-right: 2vw;
         --thumbnails-image-width: 25vh;
         --thumbnails-image-height: 20vh;
         --thumbnails-title-height: calc(var(--thumbnails-image-height) * 0.25);
-        --details-image-width: 55vw;
+        --details-image-width: 45vw;
         --details-image-height: 70vh;
     }
     .main-class {
         flex-direction: row;
         justify-content: space-around;
     }
+    .details-conteiner {
+        justify-content: center;
+    }
     .details-title {
         font-size: 1.8em;
-        bottom: 20vh;
-        left: 45vw;
+        bottom: 14vh;
+        left: 35vw;
     }
     #hide-button {
         position: absolute;
-        right: -25vw;
+        right: -20vw;
         top: 5vh;
     }
     .thumbnails-list {
@@ -163,6 +175,7 @@ padding-right: 2vw;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
+        
         max-height: 75vh;
     }
     
@@ -179,12 +192,27 @@ padding-right: 2vw;
     }
 }
 @media (min-width: 1000px) {
+    body {
+        --thumbnails-image-width: 25vh;
+        --thumbnails-image-height: 20vh;
+        --thumbnails-title-height: calc(var(--thumbnails-image-height) * 0.25);
+        --details-image-width: 55vw;
+        --details-image-height: 70vh;
+    }
+    .details-title {
+        font-size: 1.8em;
+        bottom: 20vh;
+        left: 35vw;
+    }
     h2 {
         font-size: 1.5em;
     }
     
     .thumbnails-list {
         padding-right: 2vw;
+    }
+    #hide-button {
+        right: -25vw;
     }
     
 }
