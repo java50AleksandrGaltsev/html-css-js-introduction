@@ -28,23 +28,20 @@ const array = [10, 20, 30, -10, 11, 100];
 // const ulElement = `<ul>${ar3.join('')}</ul>`;
 
 function coloringString (str1, str2) {
-    const ar1 = Array.from(str1);
-    const ar2 = Array.from(str2);
-    const ar3 = ar2.map (function (symbol, i){
-    const index = ar1.indexOf(symbol, i);
-    if (index != -1 && index != i) {
-        return "yellow";
-    } else {
-        if (index != -1 && index == i) {
-            return "green";
-        } else {
-            return "red";
-        }
-    }
-    
-})
-return ar3;
-    
+    //const ar1 = Array.from(str1);
+    const arStr2 = Array.from(str2);
+    const res = arStr2.map(function (symbol, index) {
+        let color;
+      if(symbol === str1[index]) {
+        color = "green"
+      } else {
+        color = str1.includes(symbol) ? "yellow" : "red";
+      }
+      return color;
+    })
+    return res;
+   
+
 }
 //getting array of numbers in a given range. Example as follows
 // const min = 5;
@@ -58,17 +55,24 @@ return ar3;
 // })
 //HW#14 (2) 
 function getNumbersWithDigitsAmount (digitsAmount, array) {
-    const ar4 = array.filter (function (number) {
-        if (number < 0) {
-            number = -number;
-        }
-        let ind = number.toString();
-        if (ind.length == digitsAmount) {
-            return number;
-        }
+
+    const res = array.filter (function (number) {
+        const nDigits = getNumberDigits (number);
+        return nDigits === digitsAmount;
+        // if (number < 0) {
+        //     number = -number;
+        // }
+        // let ind = number.toString();
+        // if (ind.length == digitsAmount) {
+        //     return number;
+        // }
     })
-return ar4;
-    
+return res;
 }
-console.log (coloringString ('pappy', 'apple'));
-console.log(getNumbersWithDigitsAmount (3, [1, 100, -100, 25, 1000]));
+function getNumberDigits (number) {
+    number = Math.abs(Math.trunc(number));
+    const res = number.toString().length;
+    return res;
+}
+console.log (`coloringString ("pappy", "apple") returns -- ${coloringString ("pappy", "apple").join(' ')}` );
+console.log(`getNumbersWithDigitsAmount (3, [1, 100, -100, 25, 1000]) returns  ${getNumbersWithDigitsAmount (3, [1, 100, -100, 25, 1000])}`);
