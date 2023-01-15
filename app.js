@@ -13,6 +13,7 @@ console.log(`result of sorting [123, 9, 28, 3, 44] is ${array}`)
 //HW #15
 //********************************************* */
 //task sort1
+const arrays = [[1,2,3,4,5], [6,7,8,9,10], [200,-5, -100, 20, 40]];
 function evenOddSort (array) {
    return array.sort(function(e1, e2) {
        return e1 % 2 == 0 ? -1 : 1;
@@ -100,10 +101,14 @@ console.log([[0, 1], [2, 3]].reduce (
     res[2] /= array.length;
     return res;
  }
- console.log(`evenOddSort ([20, -10, 333, 1000, 552, 7, -7]) => ${evenOddSort ([20, -10, 333, 1000, 552, 7, -7])}`);``
- console.log(`oddEvenSort([20, -10, 333, 1000, 552, 7, -7]) => ${oddEvenSort([20, -10, 333, 1000, 552, 7, -7])}`);
+ arrays.forEach(function (array){
+    console.log(`evenOddSort ${array} => ${evenOddSort (array)}`);
+    console.log(`oddEvenSort${array} => ${oddEvenSort(array)}`);
  console.log (`evenAscDesc([20, -10, 333, 1000, 552, 7, -7]) => ${evenAscDesc([20, -10, 333, 1000, 552, 7, -7])}`);
  console.log(`minValue of array [20, -10, 333, 1000, 552, 7, -7] is ${getMin ([20, -10, 333, 1000, 552, 7, -7])}`);
  console.log (`maxValue of array [20, -10, 333, 1000, 552, 7, -7] is ${getMax ([20, -10, 333, 1000, 552, 7, -7])}`);
  console.log(`average of array ([20, -10, 333, 1000, 552, 7, -7]) is ${getAverage([20, -10, 333, 1000, 552, 7, -7])} `);
  console.log (`getMinMaxAvg ([20, -10, 333, 1000, 552, 7, -7]) => ${getMinMaxAvg ([20, -10, 333, 1000, 552, 7, -7])}`);
+ });
+ 
+ 
