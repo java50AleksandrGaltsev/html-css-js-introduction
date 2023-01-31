@@ -165,10 +165,12 @@ function isAnagram (word, anagram) {
 
 }
 function compareLetters (word, anagram) {
+    let res = false;
+    if(word.length === anagram.length) {
     const letters = Array.from(word);
     const lettersOccurrances = getStringOccurrences(letters);
     const anagramLetters = Array.from(anagram);
-    return anagramLetters.every(letter => {
+    res = anagramLetters.every(letter => {
         let res = false;
         if (lettersOccurrances[letter]) {
             res = true;
@@ -179,6 +181,7 @@ function compareLetters (word, anagram) {
         }
         return res;
     })
+}
 }
 console.log(getMostPopulatedCountry(employees));
 console.log(getMostPopulatedCountries(employees, 2));
