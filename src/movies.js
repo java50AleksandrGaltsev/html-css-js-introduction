@@ -14,31 +14,44 @@ const jsonData = '{"page":1,"results":[{"adult":false,"backdrop_path":"/bQXAqRx2
 const httpPrefix = "https://image.tmdb.org/t/p/w500";
 const data = JSON.parse(jsonData);
 //v body pomeshaem spisok
-const bodyElement = document.querySelector("ul");
-const detailsImageElement = document.getElementById("details-image");
-bodyElement.innerHTML += getAnchors();
-const anchorElements = document.querySelectorAll("a");
-function showDetails(index){
-    detailsImageElement.src=`${httpPrefix}${data.results[index].backdrop_path}`;
-}
-anchorElements.forEach((anchor, index) => 
-anchor.addEventListener("click", function(){
-    showDetails(index);
-}))
-//prevrashaem massiv v anchor elements
-function getAnchors() {
-    return `${getListItems()}`
+const detailsImage = document.querySelector(".details-image");
+const detailsTitle = document.querySelector (".details-title");
+const detailsContainer = document.querySelector (".details-conteiner");
+const anchorElements = document.querySelectorAll (".thumbnails-anchor");
+const mainElement = document.querySelector (".main-class");
+const hideButtonElement = document.querySelector ("#hide-button");
+const audio = document.querySelector ('audio');
+const IS_POINT = "is-point";
+const HIDDEN = "hidden";
+function showDetails () {
+    mainElement.classList.remove (HIDDEN);
+detailsContainer.classList.add(IS_POINT);
 
+setTimeout(function () {
+    detailsContainer.classList.remove(IS_POINT);
+})
 }
-function getListItems() {
-    const  itemsArray = data.results.map(movie => 
-        `<li>
-             <a href="#" >
-                  <img src="${httpPrefix}${movie.poster_path}">
-                  <span>
-                      ${movie.original_title}
-                  </span>
-            </a>
-         </li> `);
-         return itemsArray.join('');
+function setDetails (anchor) {
+const dataImage = anchor.getAttribute("data-details-image");
+detailsImage.src = dataImage;
+
+showDetails();
+
+detailsTitle.innerHTML = anchor.getAttribute("data-details-title");
 }
+audio.src = anchor.getAttribute ("data-details-sound");
+audio.play();
+setTimeout(function() {
+    audio.pause();
+}, 3000)
+function hideDetails () {
+    mainElement.classList.add (HIDDEN);
+}
+ for (let i = 0; i < anchorElements.length; i++) {
+    anchorElements[i].addEventListener ("click", function () {
+        setDetails(anchorElements[i]);
+    })
+ }
+ hideButtonElement.addEventListener ("click", hideDetails);
+
+ 
