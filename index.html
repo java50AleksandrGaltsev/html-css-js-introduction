@@ -1,18 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/movie.css">
-    <link rel="shortcut icon" href="movies_icon.png" type="image/x-icon">
-    <title>Movies</title>
+    <link rel="stylesheet" href="styles/cars.css">
+    <link rel="shortcut icon" href="images/faircon car.jpg" type="image/x-icon">
+    <title>Cars gallery</title>
 </head>
-<body>
-    <ul>
 
-    </ul>
-    <img id="details-image" src="">
-    <script src="src/movies.js"></script>
+<body>
+    <header class="logo">
+        <h2>Cars Gallery</h2>
+    </header>
+    <main class="main-class hidden">
+        <section class="details-conteiner">
+            <audio id="audio" src=""></audio>
+            
+            <div class="details-frame">
+                <button id="hide-button">X</button>
+
+            </div>
+            <img src="images/faircon car.jpg" class="details-image">
+            <span class="details-title"> Premium brend cars</span>
+
+        </section>
+        <ul class="thumbnails-list">
+            <li class="thumbnails-item">
+                <a class="thumbnails-anchor" href="#" data-details-image="images/Audi.jpg"
+                    data-details-title="The most elegant car" data-details-sound="audio/car1.mp3" >
+                    <img src="images/Audi.jpg" class="thumbnails-image">
+                    <span class="thumbnails-title"> Audi </span>
+                </a>
+            </li>
+            <li class="thumbnails-item">
+                <a class="thumbnails-anchor" href="#" data-details-image="images/BMW.jpg"
+                    data-details-title="The most dynamic car">
+                    <img src="images/BMW.jpg" class="thumbnails-image">
+                    <span class="thumbnails-title"> BMW </span>
+                </a>
+            </li>
+            <li class="thumbnails-item">
+                <a class="thumbnails-anchor" href="#" data-details-image="images/Tesla.jpg"
+                    data-details-title="The most ecological car">
+                    <img src="images/Tesla.jpg" class="thumbnails-image">
+                    <span class="thumbnails-title"> Tesla </span>
+                </a>
+            </li>
+            <li class="thumbnails-item">
+                <a class="thumbnails-anchor" href="#" data-details-image="images/Porshe.jpg"
+                    data-details-title="The most stylish car">
+                    <img src="images/Porshe.jpg" class="thumbnails-image">
+                    <span class="thumbnails-title"> Porsche </span>
+                </a>
+            </li>
+            <li class="thumbnails-item">
+                <a class="thumbnails-anchor" href="#" data-details-image="images/Lexus.jpg"
+                    data-details-title="The most presentative car">
+                    <img src="images/Lexus.jpg" class="thumbnails-image">
+                    <span class="thumbnails-title"> Lexus </span>
+                </a>
+            </li>
+            <li class="thumbnails-item">
+                <a class="thumbnails-anchor" href="#" data-details-image="images/Mersedes.jpg"
+                    data-details-title="The most luxure car">
+                    <img src="images/Mersedes.jpg" class="thumbnails-image">
+                    <span class="thumbnails-title"> Mercedes </span>
+                </a>
+            </li>
+            <li class="thumbnails-item">
+                <a class="thumbnails-anchor" href="#" data-details-image="images/Jaguar.jpg"
+                    data-details-title="The most fast car">
+                    <img src="images/Jaguar.jpg" class="thumbnails-image">
+                    <span class="thumbnails-title"> Jaguar </span>
+                </a>
+            </li>
+            <li class="thumbnails-item">
+                <a class="thumbnails-anchor" href="#" data-details-image="images/Audi.jpg"
+                    data-details-title="The most elegant car">
+                    <img src="images/Audi.jpg" class="thumbnails-image">
+                    <span class="thumbnails-title"> Audi </span>
+                </a>
+            </li>
+            <li class="thumbnails-item">
+                <a class="thumbnails-anchor" href="#" data-details-image="images/BMW.jpg"
+                    data-details-title="The most dynamic car">
+                    <img src="images/BMW.jpg" class="thumbnails-image">
+                    <span class="thumbnails-title"> BMW </span>
+                </a>
+            </li>
+            <li class="thumbnails-item">
+                <a class="thumbnails-anchor" href="#" data-details-image="images/Tesla.jpg"
+                    data-details-title="The most ecological car">
+                    <img src="images/Tesla.jpg" class="thumbnails-image">
+                    <span class="thumbnails-title"> Tesla </span>
+                </a>
+            </li>
+            <li class="thumbnails-item">
+                <a class="thumbnails-anchor" href="#" data-details-image="images/Porshe.jpg"
+                    data-details-title="The most stylish car">
+                    <img src="images/Porshe.jpg" class="thumbnails-image">
+                    <span class="thumbnails-title"> Porsche </span>
+                </a>
+            </li>
+            <li class="thumbnails-item">
+                <a class="thumbnails-anchor" href="#" data-details-image="images/Lexus.jpg"
+                    data-details-title="The most presentative car">
+                    <img src="images/Lexus.jpg" class="thumbnails-image">
+                    <span class="thumbnails-title"> Lexus </span>
+                </a>
+            </li>
+            <li class="thumbnails-item">
+                <a class="thumbnails-anchor" href="#" data-details-image="images/Mersedes.jpg"
+                    data-details-title="The most luxure car">
+                    <img src="images/Mersedes.jpg" class="thumbnails-image">
+                    <span class="thumbnails-title"> Mercedes </span>
+                </a>
+            </li>
+            <li class="thumbnails-item">
+                <a class="thumbnails-anchor" href="#" data-details-image="images/Jaguar.jpg"
+                    data-details-title="The most fast car">
+                    <img src="images/Jaguar.jpg" class="thumbnails-image">
+                    <span class="thumbnails-title"> Jaguar </span>
+                </a>
+            </li>
+            <li class="thumbnails-item">
+                <a class="thumbnails-anchor" href="#" data-details-image="images/Audi.jpg"
+                    data-details-title="The most elegant car">
+                    <img src="images/Audi.jpg" class="thumbnails-image">
+                    <span class="thumbnails-title"> Audi </span>
+                </a>
+            </li>
+            <li class="thumbnails-item">
+                <a class="thumbnails-anchor" href="#" data-details-image="images/BMW.jpg"
+                    data-details-title="The most dynamic car">
+                    <img src="images/BMW.jpg" class="thumbnails-image">
+                    <span class="thumbnails-title"> BMW </span>
+                </a>
+            </li>
+            <li class="thumbnails-item">
+                <a class="thumbnails-anchor" href="#" data-details-image="images/Tesla.jpg"
+                    data-details-title="The most ecological car">
+                    <img src="images/Tesla.jpg" class="thumbnails-image">
+                    <span class="thumbnails-title"> Tesla </span>
+                </a>
+            </li>
+            <li class="thumbnails-item">
+                <a class="thumbnails-anchor" href="#" data-details-image="images/Porshe.jpg"
+                    data-details-title="The most stylish car">
+                    <img src="images/Porshe.jpg" class="thumbnails-image">
+                    <span class="thumbnails-title"> Porsche </span>
+                </a>
+            </li>
+            <li class="thumbnails-item">
+                <a class="thumbnails-anchor" href="#" data-details-image="images/Lexus.jpg"
+                    data-details-title="The most presentative car">
+                    <img src="images/Lexus.jpg" class="thumbnails-image">
+                    <span class="thumbnails-title"> Lexus </span>
+                </a>
+            </li>
+            <li class="thumbnails-item">
+                <a class="thumbnails-anchor" href="#" data-details-image="images/Mersedes.jpg"
+                    data-details-title="The most luxure car">
+                    <img src="images/Mersedes.jpg" class="thumbnails-image">
+                    <span class="thumbnails-title"> Mercedes </span>
+                </a>
+            </li>
+            <li class="thumbnails-item">
+                <a class="thumbnails-anchor" href="#" data-details-image="images/Jaguar.jpg"
+                    data-details-title="The most fast car">
+                    <img src="images/Jaguar.jpg" class="thumbnails-image">
+                    <span class="thumbnails-title"> Jaguar </span>
+                </a>
+            </li>
+        </ul>
+
+    </main>
+    <script src="src/cars.js"></script>
 </body>
+
 </html>
