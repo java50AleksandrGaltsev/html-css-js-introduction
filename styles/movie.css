@@ -1,0 +1,212 @@
+html {
+    height: 100%;
+}
+body {
+    --thumbnails-image-width: 25vw;
+    --thumbnails-image-height: 10vh;
+    --thumbnails-title-height: calc(var(--thumbnails-image-height) * 0.33);
+    --details-image-width: 80vw;
+    --details-image-height: 40vh;
+}
+body {
+    height: 100%;
+    background-color: silver;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+.logo { 
+   display: block;
+   text-align: center;
+   background-color:dimgray;
+   font-size: 2em; 
+   text-transform: uppercase;
+   font-family: airstream;
+}
+h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.main-class {
+   display: flex;
+   flex-direction: column; 
+   justify-content: center;
+   flex-grow: 1;
+}
+.main-class.hidden {
+   
+   justify-content: space-around;
+}
+.details-conteiner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    margin-bottom: 2vh;
+    transition: 5s cubic-bezier(0.8, 2, 0.2, 1);
+    
+}
+.hidden .details-conteiner {
+    display: none;
+}
+.details-frame {
+    position: relative;
+}
+.details-image {
+    width: var(--details-image-width);
+    /* height: var(--details-image-height); */
+    border-radius: 25%;
+}
+.details-title {
+    display: none;
+    
+}
+#hide-button {
+    position: absolute;
+    right: -40vw;
+    top: 3vh;
+}
+#audio {
+    position: absolute;
+    right: -40 vw;
+    top: 3vh;
+}
+.thumbnails-list {
+display: flex;
+flex-wrap: wrap;
+max-height: 37vh;
+overflow-y: scroll;
+list-style: none;
+justify-content: space-around;
+padding-left: 0;
+margin-top: 3vh;
+padding-right: 2vw;
+}
+.hidden .thumbnails-list {
+    max-height: 67vh;
+    
+}
+.thumbnails-item {
+    
+    border: solid 2px black;
+    margin-top: 2vh;
+    border-radius: 25%;
+    overflow: hidden;
+    min-height: calc(var(--thumbnails-image-height) + var(--thumbnails-title-height));
+    min-width: var(--thumbnails-image-width);
+    max-width: var(--thumbnails-image-width);
+   
+   
+}
+.thumbnails-item:hover {
+    transform: scale(1.1);
+    margin-left: 1.3vw;
+    margin-right: 1.3vw;
+   
+}
+.thumbnails-anchor {
+    text-decoration: none;
+}
+.thumbnails-image {
+    display: block;
+    width: var(--thumbnails-image-width);
+    height: var(--thumbnails-image-height);
+}
+.thumbnails-title {
+    display: block;
+    text-align: center;
+    background-color: darkgray;
+    color: black;
+    height: var(--thumbnails-title-height);
+}
+.is-point {
+    transform: scale(0.001);
+    transition: 0s;
+}
+@media (min-width: 560px) {
+    body {
+        --thumbnails-image-width: 25vh;
+        --thumbnails-image-height: 20vh;
+        --thumbnails-title-height: calc(var(--thumbnails-image-height) * 0.25);
+        --details-image-width: 45vw;
+        --details-image-height: 70vh;
+    }
+    .main-class {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .details-conteiner {
+        justify-content: center;
+    }
+    .details-title {
+        display: block;
+        background-color:gainsboro;
+        text-transform: uppercase;
+        font-size: 1.4em;
+        position: absolute;
+        bottom: 55vh;
+        left: 8vw;
+    }
+    .details-title {
+        font-size: 1.8em;
+        bottom: 14vh;
+        left: 35vw;
+    }
+    #hide-button {
+        position: absolute;
+        right: -20vw;
+        top: 5vh;
+    }
+    .thumbnails-list {
+        order: -1;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        max-height: 77vh;
+        justify-content: flex-start;
+        padding-right: 2vw;
+    }
+    .hidden .thumbnails-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        
+        max-height: 75vh;
+    }
+    
+    
+    .details-image {
+
+        margin-top: 10px;
+    }
+    
+    h2 {
+        font-size: 1em;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+@media (min-width: 1000px) {
+    body {
+        --thumbnails-image-width: 25vh;
+        --thumbnails-image-height: 20vh;
+        --thumbnails-title-height: calc(var(--thumbnails-image-height) * 0.25);
+        --details-image-width: 55vw;
+        --details-image-height: 70vh;
+    }
+    .details-title {
+        font-size: 1.8em;
+        bottom: 20vh;
+        left: 35vw;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    
+    .thumbnails-list {
+        padding-right: 2vw;
+    }
+    #hide-button {
+        right: -25vw;
+    }
+    
+}
