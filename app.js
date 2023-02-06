@@ -37,26 +37,43 @@ class Company {
         this.#employees = {};
     }
     addEmloyee (empl) {
-        //TODO
+       let res = false;
+       if(!this.#employees[empl.id]) {
+        this.#employees[empl.id] = empl;
+        res = true;
+       }
+       return res;
         //adds empl into #emloyees object
         //returns false if employee with a given id value already exist
     }
     removeEmployee(id) {
-        //TODO
+        let res = false;
+        if(this.#employees[id]) {
+            delete this.#employees[id];
+            return true;
+        }
+        return res;
         //removes employee with a given id from #employees object
         //retuns true if removed
         //returns false if employee with the id doesn't exist
     }
     getEmployeesCountry(country) {
-        //TODO
+       return Object.values(this.#employees).filter(empl => empl.address.country === country);
         //returns array of employee object having field "contry" equeled to a given countries
     }
     getEmployeesByAge (age) {
-        //TODO
+        let today = new Date;
+        let currentYear = today.getFullYear();
+        return Object.values(this.#employees).filter(empl => (currentYear - empl.birthYear) === age);
         //returns array of employee object with a given age
     }
     getEmploeesBySalaries(salaryFrom, salaryTo) {
-        //TODO
+        if (salaryTo < 0) {
+            salaryTo = Number.MAX_VALUE
+        }
+        return Object.values(this.#employees).filter(empl => 
+         empl.salary >= salaryFrom && empl.salary <=salaryTo);
+           
         //returns array of employee objects with salary in a given closed range[]
         //if salary from < 0, then get employees with salary less or equal salaryTo
         //if salaryTo, 0, then get employees with salary greater or equal salaryTo
